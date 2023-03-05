@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Font for the site -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Style file -->
+    <link rel="stylesheet" href="../css/styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Container holds all the forms -->
+    <div class="container">
+      <!--
+         First form not hidden since this is starting point.
+         Gets the age and gender of the user.
+      -->
+      <div class="div_form1">
+        <h1>Framingham Risk Score Calculator for Heart Disease</h1>
+        <form class="form1_age_gender">
+          <h2>What is your age?</h2>
+
+          <input type="range" min="20" max="79" class="select_age" />
+          <label for="select_age"><span class="age_value"></span> Years</label>
+
+          <h2>What is your gender?</h2>
+          <input
+            type="radio"
+            class="select_male"
+            name="gender_select"
+            value="Male"
+          />
+          <label for="select_male">Male</label><br />
+
+          <input
+            type="radio"
+            class="select_female"
+            name="gender_select"
+            value="Female"
+          />
+          <label for="select_female">Female</label><br />
+        </form>
+        <!-- Message if user has not filled in the appropriate fields -->
+        <p class="message_gender"></p>
+        <button class="btn_next" id="bn1">&#8618;</button>
+      </div>
+
+      <!--
+         From2 hidden until the next button is clicked.
+         Gets the Total Cholesterol and HDL Cholesterol of the user
+      -->
+      <div class="div_form2 hidden">
+        <form class="form2_cholesterol">
+          <h2>Enter Your Cholesterol Information</h2>
+          <label for="in_cholesterol">Total Cholesterol:</label>
+          <input
+            type="number"
+            min="0"
+            name="total_cholesterol"
+            class="total_cholesterol"
+            oninput="validity.valid||(value='');"
+          />
+          <label for="in_cholesterol">md/dl</label>
+          <br />
+
+          <label for="hdl_cholesterol">HDL Cholesterol:</label>
+          <input
+            type="number"
+            name="hdl_cholesterol"
+            class="hdl_cholesterol"
+            min="0"
+            oninput="validity.valid||(value='');"
+          />
+          <label for="hdl_cholesterol">md/dl</label>
+          <!-- Message if user has not filled in the appropriate fields -->
+          <p class="message_ch"></p>
+        </form>
+
+        <button class="btn_previous" id="bp2">&#8617;</button>
+        <button class="btn_next" id="bn2">&#8618;</button>
+      </div>
+       
+      <!-- Form 3 gets whether the user smokes or not -->
+      <div class="div_form3 hidden">
+        <form class="form3_smoking">
+          <h2>Are you a Smoker?</h2>
+
+          <input type="radio" class="btn_no" name="smoker" value="no" />
+          <label for="smoker_no">No</label>
+
+          <input type="radio" class="btn_yes" name="smoker" value="yes" />
+          <label for="smoker_yes">Yes</label>
+          <!-- Message if user has not filled in the appropriate fields -->
+          <p class="message_smoker"></p>
+        </form>
+
+        <button class="btn_previous" id="bp3">&#8617;</button>
+        <button class="btn_next" id="bn3">&#8618;</button>
+      </div>
+
+      <!-- Gets the blood pressure of the user -->
+      <div class="div_form4 hidden">
+        <form class="form4_pressure">
+          <h2>Enter your blood pressure</h2>
+          <label for="in_pressure">Blood Pressure:</label>
+          <input
+            type="number"
+            name="in_pressure"
+            class="in_pressure"
+            min="0"
+            oninput="validity.valid||(value='');"
+          />
+          <label for="in_pressure">mm hg</label><br />
+
+          <input
+            type="radio"
+            class="select_treated"
+            name="bp_select"
+            value="Male"
+          />
+          <label for="bp_select">Treated</label>
+
+          <input
+            type="radio"
+            class="select_untreated"
+            name="bp_select"
+            value="Male"
+          />
+          <label for="bp_select">Untreated</label>
+          <!-- Message if user has not filled in the appropriate fields -->
+          <p class="message_bp"></p>
+        </form>
+
+        <button class="btn_previous" id="bp4">&#8617;</button>
+        <button class="btn_next" id="bn4">Submit</button>
+      </div>
+
+      <!-- Shows the final results of the calculator -->
+      <div class="div_form5 hidden">
+        <form class="form5_output">
+          <h2>Results:</h2>
+          <!-- Results shown here in text -->
+          <h2 class="message_out"></h2>
+          <!-- Results drawn on canvas but only if it is a number -->
+          <canvas class="can hidden" width="350" height="350"></canvas>
+        </form>
+
+        <button class="btn_previous" id="bp5">&#8617;</button>
+        <button class="btn_restart" id="br5">&#10227;</button>
+      </div>
+    </div>
+    <!-- Linking to javaScript file -->
+    <script src="../js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,92 @@
+/* Setting the font for the entire page. */
+body {
+  font-family: "Roboto Slab", serif;
+}
+/* Setting the color of the Header to white and centering it. */
+h1 {
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+
+/* This is used throughout the document to show and hide the forms so that it appears as multiple pages*/
+.hidden {
+  display: none;
+}
+
+/*Sets the background image for the site */
+.container {
+  background: url("../images/background.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  display: block;
+  height: 100vh;
+  width: auto;
+}
+
+/* styles the divs that contains the forms and centers it*/
+.container > div {
+  background-image: linear-gradient(to top left, #1ebddd, #96cb7b);
+  padding: 5em;
+  border-radius: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: auto;
+}
+
+/* The canvas used to make the pie-chart */
+.can {
+  padding-left: 100px;
+}
+
+/* Alligning a few elements */
+form,
+p,
+button {
+  padding-top: 1em;
+  margin: 0 0 0 25%;
+}
+
+.form1_age_gender,
+#bn1,
+.message_gender {
+  margin: 0 0 0 35%;
+}
+
+.form2_cholesterol {
+  padding-left: 10%;
+}
+
+.form4_pressure {
+  padding-left: 10%;
+}
+
+.message_ch,
+.message_smoker,
+.message_bp {
+  margin: 0;
+}
+
+.form3_smoking {
+  padding-left: 15%;
+}
+
+.form3_smoking > h2 {
+  margin: 0 50% 1em 0%;
+}
+/* Alligning a few elements */
+
+/* Button size */
+button {
+  font-size: 1em;
+  width: 100px;
+  height: 10%;
+  padding-top: 0%;
+}
+
